@@ -59,7 +59,7 @@ export function WelcomeFragment() {
                             <div className="i-mynaui:brand-linkedin size-4" />
                         </SocialButtonLink>
 
-                        <SocialButtonLink href="https://github.com/denishsharma/chatbot-flow-builder-task-bitespeed">
+                        <SocialButtonLink href="https://github.com/denishsharma/react-starter-template/">
                             <div className="i-mynaui:brand-github size-4" />
                         </SocialButtonLink>
                     </div>
