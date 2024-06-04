@@ -38,6 +38,7 @@
         "prepare": "simple-git-hooks"
     },
     "dependencies": {
+        "@vercel/analytics": "^1.3.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
