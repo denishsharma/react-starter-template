@@ -1,0 +1,13 @@
+@import "base";
+@import "overlayscrollbars/styles/overlayscrollbars.css";
+
+// Overrides
+@import "overrides/overlayscrollbars";
+
+body {
+    @apply font-normal w-full of-x-hidden text-gray-900 min-h-dvh;
+}
+
+[data-x-app="wrapper"] {
+    @apply min-h-dvh;
+}
