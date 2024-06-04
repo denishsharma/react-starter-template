@@ -31,6 +31,16 @@ export default antfu(
             ],
             "import/newline-after-import": ["error", { count: 1 }],
         },
+        ignores: [
+            ".generated/",
+            "dist",
+            "node_modules",
+            "public",
+            "build",
+            "out",
+            "coverage",
+            "cypress",
+        ],
     },
     {
         name: "@tanstack/query",
@@ -42,6 +52,12 @@ export default antfu(
             "@tanstack/query/exhaustive-deps": "error",
             "@tanstack/query/no-rest-destructuring": "warn",
             "@tanstack/query/stable-query-client": "error",
+        },
+    },
+    {
+        files: [".generated/**/*"],
+        rules: {
+            "eslint-comments/no-unlimited-disable": "off",
         },
     },
 );
