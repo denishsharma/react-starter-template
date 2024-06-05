@@ -1,10 +1,18 @@
 import { CounterStoreProvider, useCounterStore } from "~/modules/welcome/stores/counter";
+import { cn } from "~/utils/cn.ts";
 
 function CounterButton() {
     const [count, increment] = useCounterStore(s => [s.count, s.increment]);
 
     return (
-        <button type="button" onClick={increment} className="h-8 w-full select-none border border-dark-200 rounded-lg bg-dark-300/50 px-2 text-sm transition active:(bg-dark-400) hover:(bg-dark-300)">
+        <button
+            type="button"
+            onClick={increment}
+            className={cn(
+                "h-8 w-full select-none border border-dark-200 rounded-lg bg-dark-300/50 px-2 text-sm transition active:(bg-dark-400) hover:(bg-dark-300)",
+                "light:(hover:(bg-light-500) active:(bg-light-50 border-gray-300) bg-light-50 border-gray-300)",
+            )}
+        >
             Count:
             {" "}
             {count}
@@ -22,7 +30,7 @@ export function Counter() {
                 </div>
             </div>
 
-            <div className="mt-2 border border-dark-300 rounded-lg bg-dark-800 p-3">
+            <div className="mt-2 border border-dark-300 rounded-lg bg-dark-800 p-3 light:(border-gray-300 bg-light-600)">
                 <div className="grid grid-cols-2 gap-x-2">
                     <CounterStoreProvider initial={{ count: 0 }}>
                         <CounterButton />
