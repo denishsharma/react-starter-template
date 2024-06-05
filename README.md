@@ -13,6 +13,13 @@ This is a simple React starter template that allows you to quickly get started w
 
 ## Getting Started
 
+Copy and paste the following command to create a new project using this template:
+
+```bash
+# Only works on Unix-based systems with bash
+read -p "Enter directory name: " dirname && git clone --single-branch --branch main https://github.com/denishsharma/react-starter-template.git "$dirname" && cd "$dirname" && rm -rf .git && git init && { command -v pnpm >/dev/null 2>&1 || { echo >&2 "pnpm is not installed. Installing..."; npm install -g pnpm; }; } && pnpm install
+```
+
 To get started, clone the repository and install the dependencies:
 
 ```bash
