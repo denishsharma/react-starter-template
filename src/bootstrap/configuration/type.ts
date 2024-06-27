@@ -1,17 +1,17 @@
-export type ConfigKeyOf<T extends object> = {
+export type ConfigurationKey<T extends object> = {
     [K in keyof T & (string | number)]: T[K] extends any[]
         ? `${K}`
         : T[K] extends object
-            ? `${K}` | `${K}.${ConfigKeyOf<T[K]>}`
+            ? `${K}` | `${K}.${ConfigurationKey<T[K]>}`
             : `${K}`;
 }[keyof T & (string | number)];
 
-export type ConfigValueType<T, P extends string> =
+export type ConfigurationKeyType<T extends object, P extends string> =
     P extends `${infer Key}.${infer Rest}`
         ? Key extends keyof T
             ? T[Key] extends object
-                ? Rest extends ConfigKeyOf<T[Key]>
-                    ? ConfigValueType<T[Key], Rest>
+                ? Rest extends ConfigurationKey<T[Key]>
+                    ? ConfigurationKeyType<T[Key], Rest>
                     : never
                 : never
             : never

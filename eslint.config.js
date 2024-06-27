@@ -11,14 +11,16 @@ export default antfu(
             indent: 4,
             quotes: "double",
             semi: true,
+            overrides: {
+                "style/array-bracket-newline": ["error", { multiline: true }],
+                "style/function-call-argument-newline": ["error", "consistent"],
+                "style/brace-style": ["error", "1tbs", { allowSingleLine: true }],
+                "style/max-statements-per-line": ["error", { max: 2 }],
+                "style/jsx-self-closing-comp": ["error", { component: true, html: true }],
+                "style/jsx-max-props-per-line": ["error", { maximum: 1, when: "multiline" }],
+            },
         },
         rules: {
-            "style/array-bracket-newline": ["error", { multiline: true }],
-            "style/function-call-argument-newline": ["error", "consistent"],
-            "style/brace-style": ["error", "1tbs", { allowSingleLine: true }],
-            "style/max-statements-per-line": ["error", { max: 2 }],
-            "style/jsx-self-closing-comp": ["error", { component: true, html: true }],
-            "style/jsx-max-props-per-line": ["error", { maximum: 1, when: "multiline" }],
             "antfu/if-newline": "off",
             "no-console": ["warn", { allow: ["warn", "error"] }],
             "import/order": [

@@ -1,8 +1,6 @@
 import { useCallback, useEffect, useMemo } from "react";
 import { useLocalStorage, useMedia } from "react-use";
 
-import { getAppConfig } from "~/configs/app";
-
 type ColorMode = "light" | "dark" | "system";
 
 export function useColorMode() {
@@ -10,7 +8,7 @@ export function useColorMode() {
 
     const systemPreference: "dark" | "light" = useMemo(() => systemPrefersDark ? "dark" : "light", [systemPrefersDark]);
 
-    const [_mode, _setMode] = useLocalStorage(getAppConfig("color_mode.storage_key"), (getAppConfig("color_mode.default") === "system" ? systemPreference : getAppConfig("color_mode.default")) as ColorMode);
+    const [_mode, _setMode] = useLocalStorage(config().app("color_mode.storage_key"), (config().app("color_mode.default") === "system" ? systemPreference : config().app("color_mode.default")) as ColorMode);
 
     const setColorMode = useCallback((mode: ColorMode) => {
         _setMode(mode === "system" ? systemPreference : mode);

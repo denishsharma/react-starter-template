@@ -1,6 +1,7 @@
 import { TanStackRouterVite as tanStackRouter } from "@tanstack/router-vite-plugin";
 import react from "@vitejs/plugin-react";
 import unocss from "unocss/vite";
+import autoImport from "unplugin-auto-import/vite";
 import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
 
@@ -28,6 +29,16 @@ export default defineConfig({
             svgrOptions: {
                 plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
             },
+        }),
+        autoImport({
+            dts: "./.generated/auto-imports.d.ts",
+            include: [/\.[jt]sx?$/],
+            imports: [
+                {
+                    from: "~/../src/bootstrap/configuration",
+                    imports: ["config"],
+                },
+            ],
         }),
     ],
 });
