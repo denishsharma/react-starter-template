@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "vivaxy.vscode-conventional-commits",
+        "dotenv.dotenv-vscode",
+        "editorconfig.editorconfig",
+        "usernamehw.errorlens",
+        "dbaeumer.vscode-eslint",
+        "antfu.iconify",
+        "visualstudioexptteam.vscodeintellicode",
+        "christian-kohler.path-intellisense",
+        "antfu.unocss"
+    ]
+}
