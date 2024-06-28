@@ -27,7 +27,19 @@ export default antfu(
                 "error",
                 {
                     "newlines-between": "always",
-                    "groups": [["external"], ["parent", "internal", "builtin", "sibling", "index"], "object", "type"],
+                    "groups": [
+                        ["external"],
+                        ["parent", "internal", "builtin", "sibling", "index"],
+                        "object",
+                        "type",
+                    ],
+                    "pathGroups": [
+                        {
+                            group: "unknown",
+                            pattern: "~@configuration/**",
+                            position: "after",
+                        },
+                    ],
                     "alphabetize": { order: "asc", caseInsensitive: true },
                 },
             ],

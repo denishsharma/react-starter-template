@@ -7,6 +7,7 @@
         "module": "ESNext",
         "moduleResolution": "bundler",
         "paths": {
+            "~@configuration/*": ["./src/bootstrap/configuration/*"],
             "~/*": ["./src/*"]
         },
         "resolveJsonModule": true,

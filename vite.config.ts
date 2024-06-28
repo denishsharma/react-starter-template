@@ -10,7 +10,10 @@ import { URL, fileURLToPath } from "node:url";
 // https://vitejs.dev/config/
 export default defineConfig({
     resolve: {
-        alias: [{ find: "~", replacement: fileURLToPath(new URL("./src", import.meta.url)) }],
+        alias: [
+            { find: "~", replacement: fileURLToPath(new URL("./src", import.meta.url)) },
+            { find: "~@configuration", replacement: fileURLToPath(new URL("./src/bootstrap/configuration", import.meta.url)) },
+        ],
     },
     plugins: [
         unocss(),

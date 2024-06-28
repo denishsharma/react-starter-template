@@ -1,4 +1,4 @@
-import type { IApplicationConfiguration } from "~/bootstrap/configuration/schema";
+import type { IApplicationConfiguration } from "~@configuration/schema";
 
 export const applicationConfiguration: IApplicationConfiguration = {
     color_mode: {
