@@ -12,6 +12,7 @@ export default defineConfig({
     resolve: {
         alias: [
             { find: "~", replacement: fileURLToPath(new URL("./src", import.meta.url)) },
+            { find: "~@generic-components", replacement: fileURLToPath(new URL("./src/bootstrap/components/generics", import.meta.url)) },
             { find: "~@configuration", replacement: fileURLToPath(new URL("./src/bootstrap/configuration", import.meta.url)) },
         ],
     },

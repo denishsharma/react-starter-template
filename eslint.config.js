@@ -36,6 +36,11 @@ export default antfu(
                     "pathGroups": [
                         {
                             group: "unknown",
+                            pattern: "~@generic-components/**",
+                            position: "after",
+                        },
+                        {
+                            group: "unknown",
                             pattern: "~@configuration/**",
                             position: "after",
                         },
