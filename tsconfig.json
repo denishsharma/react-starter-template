@@ -7,8 +7,7 @@
         "module": "ESNext",
         "moduleResolution": "bundler",
         "paths": {
-            "~@generic-components/*": ["./src/bootstrap/components/generics/*"],
-            "~@configuration/*": ["./src/bootstrap/configuration/*"],
+            "~@/*": ["./src/bootstrap/*"],
             "~/*": ["./src/*"]
         },
         "resolveJsonModule": true,

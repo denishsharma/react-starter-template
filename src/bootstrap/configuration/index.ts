@@ -1,7 +1,7 @@
 import configuration from "~/configs";
 
-import type { IConfiguration } from "~@configuration/schema";
-import type { ConfigurationKey, ConfigurationKeyType } from "~@configuration/type";
+import type { IConfiguration } from "~@/configuration/schema";
+import type { ConfigurationKey, ConfigurationKeyType } from "~@/configuration/type";
 
 /**
  * Utility functions for getting configuration values.

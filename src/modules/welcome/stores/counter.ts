@@ -1,7 +1,6 @@
 import { immer } from "zustand/middleware/immer";
 
-import { createStoreContext } from "~/hooks/create-store-context";
-import { defineStoreInstance } from "~/utils/store";
+import { createStoreContext, defineStoreInstance } from "~@/store";
 
 interface State {
     count: number;

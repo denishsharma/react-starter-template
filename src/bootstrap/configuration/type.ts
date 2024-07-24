@@ -1,9 +1,13 @@
+type Primitive = string | number | boolean | null | undefined;
+
 export type ConfigurationKey<T extends object> = {
-    [K in keyof T & (string | number)]: T[K] extends any[]
+    [K in keyof T & (string | number)]: T[K] extends Primitive
         ? `${K}`
-        : T[K] extends object
-            ? `${K}` | `${K}.${ConfigurationKey<T[K]>}`
-            : `${K}`;
+        : T[K] extends Array<any> | ((...args: any[]) => any)
+            ? `${K}`
+            : T[K] extends object
+                ? `${K}` | `${K}.${ConfigurationKey<Omit<T[K], keyof any[]>>}`
+                : `${K}`;
 }[keyof T & (string | number)];
 
 export type ConfigurationKeyType<T extends object, P extends string> =

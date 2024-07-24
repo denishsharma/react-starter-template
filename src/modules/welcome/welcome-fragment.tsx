@@ -3,7 +3,8 @@ import type { ComponentPropsWithoutRef } from "react";
 import { Counter } from "~/modules/welcome/components/counter";
 import { Post } from "~/modules/welcome/components/post";
 import { ThemeToggle } from "~/modules/welcome/components/theme-toggle";
-import { cn } from "~/utils/cn";
+
+import { cn } from "~@/utils/cn";
 
 function SocialButtonLink({ className, children, ...props }: ComponentPropsWithoutRef<"a">) {
     return (

@@ -2,7 +2,8 @@ import { random } from "radash";
 import { useState } from "react";
 
 import { usePost } from "~/modules/welcome/queries/use-post";
-import { cn } from "~/utils/cn";
+
+import { cn } from "~@/utils/cn";
 
 export function Post() {
     const [id, setId] = useState(random(1, 20));

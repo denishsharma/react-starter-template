@@ -1,5 +1,5 @@
-import { useColorMode } from "~/hooks/use-color-mode";
-import { cn } from "~/utils/cn";
+import { useColorMode } from "~@/hooks/use-color-mode";
+import { cn } from "~@/utils/cn";
 
 export function ThemeToggle() {
     const { resolvedMode, toggleColorMode } = useColorMode();

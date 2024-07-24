@@ -1,8 +1,16 @@
 import { z } from "zod";
 
-import type { DeepReadonly } from "~/types/generics";
+import type { DeepReadonly } from "~@/types/generics";
 
 const applicationConfigurationSchema = z.object({
+    project: z.object({
+        name: z.string(),
+        description: z.string(),
+        keywords: z.array(z.string()),
+    }),
+    enable: z.object({
+        analytics: z.boolean(),
+    }),
     color_mode: z.object({
         default: z.enum(["light", "dark", "system"]),
         storage_key: z.string(),

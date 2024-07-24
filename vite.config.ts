@@ -1,4 +1,5 @@
 import { TanStackRouterVite as tanStackRouter } from "@tanstack/router-vite-plugin";
+import unhead from "@unhead/addons/vite";
 import react from "@vitejs/plugin-react";
 import unocss from "unocss/vite";
 import autoImport from "unplugin-auto-import/vite";
@@ -12,8 +13,7 @@ export default defineConfig({
     resolve: {
         alias: [
             { find: "~", replacement: fileURLToPath(new URL("./src", import.meta.url)) },
-            { find: "~@generic-components", replacement: fileURLToPath(new URL("./src/bootstrap/components/generics", import.meta.url)) },
-            { find: "~@configuration", replacement: fileURLToPath(new URL("./src/bootstrap/configuration", import.meta.url)) },
+            { find: "~@", replacement: fileURLToPath(new URL("./src/bootstrap", import.meta.url)) },
         ],
     },
     plugins: [
@@ -22,12 +22,10 @@ export default defineConfig({
             quoteStyle: "double",
             routesDirectory: "./src/pages",
             generatedRouteTree: "./.generated/routeTree.gen.ts",
-            experimental: {
-                enableCodeSplitting: true,
-            },
             semicolons: true,
         }),
         react(),
+        unhead(),
         svgr({
             include: "**/*.svg",
             svgrOptions: {
@@ -41,6 +39,15 @@ export default defineConfig({
                 {
                     from: "~/../src/bootstrap/configuration",
                     imports: ["config"],
+                },
+                {
+                    from: "unhead",
+                    imports: [
+                        "getActiveHead",
+                        { name: "useHead", as: "withHead" },
+                        { name: "useSeoMeta", as: "withSeoMeta" },
+                        { name: "useHeadSafe", as: "withHeadSafe" },
+                    ],
                 },
             ],
         }),

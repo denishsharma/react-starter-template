@@ -1,5 +1,6 @@
 import { CounterStoreProvider, useCounterStore } from "~/modules/welcome/stores/counter";
-import { cn } from "~/utils/cn.ts";
+
+import { cn } from "~@/utils/cn";
 
 function CounterButton() {
     const [count, increment] = useCounterStore(s => [s.count, s.increment]);

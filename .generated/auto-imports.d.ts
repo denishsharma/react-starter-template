@@ -6,4 +6,8 @@
 export {}
 declare global {
   const config: typeof import('~/../src/bootstrap/configuration')['config']
+  const getActiveHead: typeof import('unhead')['getActiveHead']
+  const withHead: typeof import('unhead')['useHead']
+  const withHeadSafe: typeof import('unhead')['useHeadSafe']
+  const withSeoMeta: typeof import('unhead')['useSeoMeta']
 }

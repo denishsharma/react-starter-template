@@ -5,7 +5,7 @@
 @import "overrides/overlayscrollbars";
 
 body {
-    @apply font-normal w-full of-x-hidden text-gray-900 min-h-dvh;
+    @apply font-normal w-full of-x-hidden text-gray-900 bg-white dark:(text-light-50 bg-dark-600) min-h-dvh;
 }
 
 [data-x-app="wrapper"] {

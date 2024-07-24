@@ -1,6 +1,6 @@
 import { type ReactElement, type ReactNode, isValidElement } from "react";
 
-import { Whenever } from "~@generic-components/whenever";
+import { Whenever } from "~@/components/generics/whenever";
 
 type WhenProps = Readonly<{
     /** Condition to evaluate, can be a boolean or a function that returns a boolean. */

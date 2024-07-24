@@ -1,5 +1,5 @@
 import antfu from "@antfu/eslint-config";
-import { configs as tanstackQueryConfigs, rules as tanstackQueryRules } from "@tanstack/eslint-plugin-query";
+import tanstackQueryPlugin from "@tanstack/eslint-plugin-query";
 
 export default antfu(
     {
@@ -27,21 +27,11 @@ export default antfu(
                 "error",
                 {
                     "newlines-between": "always",
-                    "groups": [
-                        ["external"],
-                        ["parent", "internal", "builtin", "sibling", "index"],
-                        "object",
-                        "type",
-                    ],
+                    "groups": [["external"], ["parent", "internal", "builtin", "sibling", "index"], "object", "type"],
                     "pathGroups": [
                         {
                             group: "unknown",
-                            pattern: "~@generic-components/**",
-                            position: "after",
-                        },
-                        {
-                            group: "unknown",
-                            pattern: "~@configuration/**",
+                            pattern: "~@/**",
                             position: "after",
                         },
                     ],
@@ -65,7 +55,7 @@ export default antfu(
         name: "@tanstack/query",
         files: ["src/**/*.{ts,tsx}"],
         plugins: {
-            "@tanstack/query": { rules: tanstackQueryRules, configs: tanstackQueryConfigs },
+            "@tanstack/query": tanstackQueryPlugin,
         },
         rules: {
             "@tanstack/query/exhaustive-deps": "error",
