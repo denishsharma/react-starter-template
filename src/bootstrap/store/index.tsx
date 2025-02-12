@@ -1,9 +1,11 @@
-import defu from "defu";
-import { type FC, type PropsWithChildren, type ReactNode, createContext, useContext, useRef } from "react";
-import { type StateCreator, create, useStore } from "zustand";
-import { immer } from "zustand/middleware/immer";
-
+import type { FC, PropsWithChildren, ReactNode } from "react";
+import type { StateCreator } from "zustand";
 import type { DeepPartial } from "~@/types/generics";
+import defu from "defu";
+import { createContext, useContext, useRef } from "react";
+import { create, useStore } from "zustand";
+
+import { immer } from "zustand/middleware/immer";
 
 /**
  * Define a store instance with default values and immer middleware.
@@ -41,7 +43,7 @@ export function createStoreContext<T, M>(instance: DefineStoreInstance<T, M>) {
     }>;
 
     function StoreProvider({ children, initial }: StoreProviderProps) {
-        const storeRef = useRef<StoreInstance<T, M>>();
+        const storeRef = useRef<StoreInstance<T, M>>(null);
         if (!storeRef.current) {
             storeRef.current = instance(initial) as StoreInstance<T, M>;
         }
