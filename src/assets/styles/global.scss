@@ -1,8 +1,9 @@
-@import "base";
+@use "sass:meta";
+@use "base";
 @import "overlayscrollbars/styles/overlayscrollbars.css";
 
-// Overrides
-@import "overrides/overlayscrollbars";
+/* Overrides */
+@include meta.load-css("overrides/overlayscrollbars");
 
 body {
     @apply font-normal w-full of-x-hidden text-gray-900 bg-white dark:(text-light-50 bg-dark-600) min-h-dvh;

@@ -23,22 +23,6 @@ export default antfu(
         rules: {
             "antfu/if-newline": "off",
             "no-console": ["warn", { allow: ["warn", "error"] }],
-            "import/order": [
-                "error",
-                {
-                    "newlines-between": "always",
-                    "groups": [["external"], ["parent", "internal", "builtin", "sibling", "index"], "object", "type"],
-                    "pathGroups": [
-                        {
-                            group: "unknown",
-                            pattern: "~@/**",
-                            position: "after",
-                        },
-                    ],
-                    "alphabetize": { order: "asc", caseInsensitive: true },
-                },
-            ],
-            "import/newline-after-import": ["error", { count: 1 }],
         },
         ignores: [
             ".generated/",
